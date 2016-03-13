@@ -1,0 +1,25 @@
+---
+layout: default
+albumName: maximus
+details: Recorded in Detroit and New York on figure propellerhead software ab v2.0.6 and mastered on Audacity v2.1.2
+trackList:
+  - Bruticus-Rex
+  - Rage-(ft.-Inner-City)
+  - Hazard-(ft.-Peter-Cullen)
+  - Out-Of-My-Mind-(ft.-Diana-Ross)
+  - Zoom!
+---
+
+<img class="album-image" src="/assets/img/bruticus-maximus.png" alt="bruticus maximus">
+
+<ul class="album">
+  {% for track in page.trackList %}
+    <li class="track">
+      <h2 class="track-name">0{{ forloop.index }} {{ track | replace:'-',' ' }}</h2>
+      <audio controls="controls">
+        Your browser does not support the <code>audio</code> element.
+        <source src="/assets/albums/{{ page.albumName }}/{{ track }}.mp3" type="audio/mp3">
+      </audio>
+    </li>
+  {% endfor %}
+</ul>
